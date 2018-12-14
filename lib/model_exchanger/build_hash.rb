@@ -1,6 +1,6 @@
 module ModelExchanger
   class BuildHash
-    def initialize(url, service)
+    def initialize()
       if Rails.env == "development"
         Rails.application.eager_load!
       end
