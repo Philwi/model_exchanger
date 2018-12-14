@@ -3,6 +3,7 @@ require 'net/http'
 module ModelExchanger
   class Send
     def initialize(get_associations, url, service)
+      binding.pry
       uri = URI(url)
       http = NET::HTTP.new(uri.host, uri.port)
       req = NET::HTTP::POST.new(uri)
