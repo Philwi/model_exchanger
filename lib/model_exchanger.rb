@@ -1,7 +1,7 @@
 require "model_exchanger/version"
 require 'net/http'
 
-class ModelExchanger
+module ModelExchanger
   def initialize(url, service)
     if Rails.env == "development"
       Rails.application.eager_load!
