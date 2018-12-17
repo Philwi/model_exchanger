@@ -1,6 +1,6 @@
-require 'net/http'
 
 module ModelExchanger
+  require 'net/http'
   class Send
     def initialize(get_associations, url, service)
       binding.pry
