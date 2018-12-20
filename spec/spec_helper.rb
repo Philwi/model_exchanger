@@ -1,9 +1,14 @@
 require "bundler/setup"
 require "model_exchanger"
 require 'webmock/rspec'
+require 'active_record'
 require 'pry'
 
 WebMock.disable_net_connect!(allow_localhost: true)
+ActiveRecord::Base.establish_connection adapter: "sqlite3", database: ":memory:"
+
+load File.dirname(__FILE__) + '/schema.rb'
+require File.dirname(__FILE__) + '/models.rb'
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

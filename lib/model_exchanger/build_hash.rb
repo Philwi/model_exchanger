@@ -36,7 +36,6 @@ module ModelExchanger
           puts e
         end
       end
-      binding.pry
       hash
     end
 
