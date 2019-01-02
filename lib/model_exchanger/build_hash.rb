@@ -3,7 +3,8 @@ module ModelExchanger
 
 
     def initialize()
-      if Rails.env == "development"
+      rails = defined? Rails
+      if rails && Rails.env == "development"
         Rails.application.eager_load!
       end
       @models = get_associations
