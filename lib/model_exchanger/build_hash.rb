@@ -1,12 +1,15 @@
 module ModelExchanger
   class BuildHash
+
+
     def initialize()
-      if Rails.env == "development"
-        Rails.application.eager_load!
-      end
-      get_associations
+      #if Rails.env == "development"
+      #  Rails.application.eager_load!
+      #end
+      @models = get_associations
     end
 
+    attr_reader :models
     protected
 
     def get_all_models
