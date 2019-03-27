@@ -31,6 +31,7 @@ module ModelExchanger
             end
           end
           hash[model]['attributes'] = get_all_attributes_and_types_of_a_model(model)
+          hash[model]['table_name'] = model.constantize.table_name
         rescue StandardError => e
           puts e
         end
